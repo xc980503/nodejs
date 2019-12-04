@@ -1,0 +1,19 @@
+{
+  "name": "day05",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "root": "^1.0.0"
+  },
+  "devDependencies": {
+    "cli-dict": "0.0.55"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "apple": "dict apple"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
