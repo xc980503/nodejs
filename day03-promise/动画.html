@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            transition: all 2s;
+        }
+    </style>
+<body>
+    <div class="box" id="box">
+
+    </div>
+
+    <!-- <script>
+        let move = ()=>{
+            box.style.transform = `translate(200px, 0)`;
+        }
+        // move()
+        box.addEventListener('transitionend', ()=>{
+            console.log('第一段动画结束');
+            box.style.transform = `translate(200px, 200px)`;
+            box.style.transform = `translate(400px, 200px)`;
+            
+
+        })
+        window.onload = ()=>{
+            move()
+        }  
+    </script> -->
+
+    <script>
+        // move(200, 0);
+        // move(200, 200);
+        // move(400, 200);
+        let global = null;
+        let move = (x, y)=>{
+            return new Promise((res, rej)=>{
+                box.style.transform = `translate(${x}px, ${y}px)`;
+                global = res;
+            })
+        }
+        
+        box.addEventListener('transitionend', ()=>{
+            global()
+        })
+        let run = ()=>{
+            // move(200, 0).then(()=>{
+            //     move(200, 200).then(()=>{
+            //         move(400, 200).then(()=>{
+            //             move(400, 400)
+            //         })
+            //     })
+            // })
+            
+            //链式调用
+            //move(200,0)函数执行完返回值是一个promise实例对象，所以他有.then方法
+            //move(200, 0).then()  里面函数体返回值是move(200,200), 因为move(200, 200)执行完的返回值是一个promise实例
+            //所以整体move(200,0).then()的返回值也还是一个promise的实例对象
+            //所以他也有.then()方法
+            move(200, 0).then(()=>{
+                return move(200, 200)
+            })
+            .then(()=>{
+                return move(400, 200)
+            })
+            .then(()=>{
+                move(400, 400)
+            })
+        }
+        window.onload = ()=>{
+            run()
+        }
+    </script>
+</body>
+</html>

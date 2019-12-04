@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<body>
+    
+
+    <script>
+        let preImage = (path)=>{
+            return new Promise((res, rej)=>{
+                // const img = document.createElement('image');
+                const img = new Image();
+                img.src = path;
+                img.onload = ()=>{
+                    res(img);
+                }
+                img.onerror = ()=>{
+                    rej(img);
+                }
+                // 加载成功res()
+                // 加载失败rej()
+            })
+        }  
+       
+        // preImage('./img/1.png').then((img)=>{
+        //     document.body.appendChild(img)
+        // }, ()=>{});
+        // preImage('./img/3.jpg').then((img)=>{
+        //     document.body.appendChild(img)
+        // }, ()=>{});
+        // preImage('./img/4.jpg').then((img)=>{
+        //     document.body.appendChild(img)
+        // }, ()=>{});
+        let p1 = preImage('./img/1.png');
+        let p2 = preImage('./img/2.png');
+        let p3 = preImage('./img/3.jpg');
+        let p4 = preImage('./img/4.jpg');
+
+        Promise.all([p1, p2, p3, p4]).then((data)=>{
+            // console.log(data)
+            data.forEach(item=>{
+                document.body.appendChild(item)
+            })
+        }, (err)=>{
+            console.log(err)
+        })
+
+        let preJs = (path)=>{
+            return new Promise((res, rej)=>{
+               const script = document.createElement('script');
+               script.src = path;
+                res(script)
+            })
+        }
+        preJs('./js/a.js').then((data)=>{
+            document.body.appendChild(data)
+        })
+        
+    </script>
+</body>
+</html>
