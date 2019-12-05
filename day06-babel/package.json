@@ -1,0 +1,23 @@
+{
+  "name": "day06",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "to": " babel ./src -d ./dist --plugins @babel/plugin-transform-block-scoping",
+    "dev": "babel ./src -d ./dist --plugins @babel/plugin-transform-arrow-functions",
+    "zh": "babel ./src -d ./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-transform-arrow-functions": "^7.7.4",
+    "@babel/plugin-transform-block-scoping": "^7.7.4",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.4"
+  }
+}
