@@ -1,0 +1,44 @@
+{
+    "name": "src",
+    "type": "folder",
+    "children": [
+        {
+            "name": "views",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "home",
+                    "type": "folder",
+                    "children": [
+                        {
+                            "name": "index.js",
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "name": "index.js",
+                    "type": "file"
+                },
+                {
+                    "name": "list.js",
+                    "type": "file"
+                },
+                {
+                    "name": "my.js",
+                    "type": "file"
+                }
+            ]
+        },
+        {
+            "name": "utils",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "checkName",
+                    "type": "file"
+                }
+            ]
+        }
+    ]
+}
