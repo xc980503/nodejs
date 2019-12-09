@@ -26,3 +26,5 @@ let readFload = (src)=>{  //往json文件里面写入数据，需要通过JSON.s
     fs.writeFileSync("./index.json",JSON.stringify(getJson(src)))
 }
 readFload("./8月")  //生成json文件
+let data = fs.readFileSync('./index.json').toString()
+console.log(data)
