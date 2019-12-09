@@ -1,0 +1,55 @@
+#uploadWrap{ width:515px; height:258px; border: 1px solid #ddd;position:relative; margin:0 auto; }
+.dialog-image .image-wrapper{font-size: 12px;margin: 15px; background: #f00;}
+
+/*upload*/
+.dialog-image .image-upload1{position: absolute;top:50%;left:50%;width:44px;height:38px;margin-top:-40px; margin-left: -22px;cursor: pointer;}
+.dialog-image .image-upload2{position:relative;width:493px;height:62px;background: #f3f3f3; margin:10px auto; border: 1px dashed #ddd; border-radius: 6px; clear:both; color:#999; font-size:12px; line-height:62px; text-align:center;}
+
+.dialog-image .image-form{position: absolute;left: 0px;top: 0px;width: 100%;height: 100%;opacity: 0;cursor: pointer;}
+.dialog-image .image-form .image-file{width: 100%;height:38px;filter: alpha(opacity=0); cursor: pointer;}
+
+.dialog-image .image-upload1 .image-icon{display: inline-block;width:44px;height:38px; cursor: pointer; background:url(../images/upload.png) no-repeat; background-size:44px 38px;}
+.dialog-image .image-upload1 .image-icon.hover{background-position: -50px 0;}
+.dialog-image  span.uploadPrompt { color:#999; text-align:center; width:100%; position:absolute; top:50%; font-size:12px; margin-top:10px; z-index:0; }
+
+.dialog-image .image-upload2 .image-icon{display: inline-block;width:493px;height:62px;}
+
+.dialog-image .image-dragTip{position: absolute;display:none;top:50%;left:50%;margin-top:30px;margin-left: -60px;
+    color: #222;font-size:14px;text-shadow: 0px 2px 3px #555;}
+
+.dialog-image .image-content{height:330px;width:100%;position: relative;}
+
+.dialog-image .image-mask{display: none;position: absolute;top:0;left:0;width: 100%; height: 100%;background-color:#fff;
+    text-align: center;line-height:300px;color:#000;font-size:14px;font-weight:bold;opacity: 0.6;filter: alpha(opacity=60);}
+.dialog-image .image-mask.active{display: block;}
+
+/*network*/
+.dialog-image .image-searchBar{margin: 10px;}
+.dialog-image .image-searchBar .image-searchTxt{display: inline-block !important;*display: inline !important;*zoom:1;width:400px; border: 1px solid #c5d2ff; height: 20px; line-height: 18px; font-size: 14px; padding: 3px; margin: 0;outline:0;}
+.dialog-image .image-searchBar .image-searchAdd{display: inline-block !important;*display: inline !important;*zoom:1;
+    width:60px; text-align:center;height: 25px;text-align: center;line-height: 25px;
+    background-color: #ffffff;padding: 0; border: 1px solid #ababab;margin-left: 20px;cursor: pointer;
+}
+.dialog-image .image-searchBar .image-searchAdd.hover{
+    background-color: #d5e1f2;
+    padding: 0;
+    border: 1px solid #a3bde3;
+}
+.dialog-image .image-searchRes{height:280px;overflow:auto;}
+
+
+/*common*/
+.dialog-image .image-item{position:relative;float:left;width:120px;height:120px;border: 1px solid #CCC;cursor: default;margin: 5px 0 0 5px;}
+.dialog-image .image-item .image-pic{position: absolute;left:-9999px;}
+.dialog-image .image-item .image-close{position:absolute;right:0;background: url('images/close.png');width:17px;height:17px;cursor:pointer;z-index:1}
+.dialog-image .image-item.hover .image-close{display: block;}
+
+
+
+/* �ϴ����� */
+.dragUpload_mask{ width:100%; height:100%; background:#000; filter: alpha(opacity=0.5); opacity:0.5; position:absolute; top:0; left:0; z-index:2000; display:none;  }
+
+
+/* ͼƬ��ʾ */
+.updataImg_wrap{ width: 490px; height: auto; margin: 10px auto;overflow: hidden; }
+.updataImg_wrap div{ float:left; margin-right:3px; position:relative; margin-bottom:3px; }
