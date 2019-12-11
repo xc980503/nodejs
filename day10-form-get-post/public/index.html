@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>这是界面</h1>
+    <button id='btn'>发送get请求</button>
+    <span id='s'></span>
+    <button id='btn2'>发送post请求</button>
+    <span id='s2'></span>
+
+
+
+    <script src="./js/a.js"></script>
+    <script src="./js/b.js"></script>
+    <script src="./js/myAjax.js"></script>
+    <script src='./js/axios.js'></script>
+    <script>
+        // myAjax('get', 'http://localhost:1210/my?user=xc&age=21').then(data=>{
+        //     console.log(data)
+        // })
+        // myAjax('post', 'http://localhost:1210/my').then(data=>{
+        //     console.log(data)
+        // })
+    </script>
+
+    <script>
+        //.then是响应结束后才执行 get
+        btn.onclick = () => {
+            axios.get('/get', {
+                params: {
+                    user: 'xc',
+                    str: 'helloworld',
+                    arr: [1,5,6,7]
+                }
+            }).then(result => { //result是一个对象  result.data才是后台响应回来的数据
+                s.innerHTML = result.data;
+                console.log(result)
+            })
+        }
+        
+        // axios.post 
+        //post
+        btn2.onclick = ()=>{
+            axios.post('/post', {
+                age: 16
+            }).then(res=>{
+                s2.innerHTML = res.data
+            })
+        } 
+    </script>
+
+</body>
+
+</html>
