@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .dd{
+        width: 750px;
+        height: 240px;
+        border: 1px solid #ccc;
+        margin: 8px auto;
+        
+    }
+    .dd .left{
+        float: left;
+       
+    }
+    .dd .left p{
+        width: 539px;
+    }
+    .dd img{
+        float: left;
+        width: 180px;
+        height: 240px;
+    }
+    .dd .rig span{
+        display: inline-block;
+        width: 80px;
+        height: 35px;
+        border: 1px solid #ccc;
+        text-align: center;
+        line-height: 35px;
+        margin-top: 30px;
+        margin-left: 60px;
+    }
+    span{
+        margin-left: 100px;
+    }
+
+    </style>
+</head>
+
+<body>
+    <input type="text" id="ipt" placeholder="请输入书名或作者"><button id="searchBtn">搜索</button>
+    <span id='mybook'>我的书架</span>
+    <div class="box" id="box">
+        
+    </div>
+</body>
+<script src="./js/axios.js"></script>
+<script src="./js/index.js"></script>
+<!-- disabled=true -->
+</html>
