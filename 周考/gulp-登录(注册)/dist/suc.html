@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>登录成功</h1>
+    <ul id='ul'></ul>
+    <button id='del'>删除</button>
+
+    <script src="lib/axios.js"></script>
+    <script>
+        axios.get('/getUser').then(res => {
+            ul.innerHTML = res.data.map(item => {
+                return `<li><input type="checkbox" name="" id="" class='check'>${item.name}~~~~~~~~~~~~${item.pwd}</li>`
+            }).join('')
+            const checks = [...document.querySelectorAll('.check')]
+            console.log(checks)
+            del.onclick = () => {
+                // let checkChange = checks.filter((item, index) => {
+                //     return item.checked == true
+                // })
+                let arr = []
+                checks.forEach((item,index)=>{
+                    if(item.checked == true){
+                        arr.push(index)
+                    }
+                })
+                console.log(arr, '------');
+                //删除请求
+                axios.get('/del', {
+                    params:{
+                        obj:{
+                            arr
+                        }
+                    }
+                }).then(res=>{
+                    alert(res.data);
+                    location.href = 'suc.html'
+                })
+            }
+
+            
+        })
+        
+    </script>
+
+</body>
+
+</html>

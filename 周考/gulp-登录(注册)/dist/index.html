@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    用户名：<input type="text"> <br>
+    密码：  <input type="text"> <br>
+    <button id='loginBtn'>登录</button>
+    <button id='regBtn'>注册</button>
+
+    <script src="lib/axios.js"></script>
+    <script>
+        const ipts = document.querySelectorAll('input')
+        loginBtn.onclick=()=>{
+            axios.get('/login', {
+                params:{
+                    user:ipts[0].value,
+                    pwd:ipts[1].value,
+                }
+            }).then(res=>{
+                if(res.data.ok){
+                    location.href = 'suc.html'
+                }else{
+                    location.href = 'err.html'
+                }
+            })
+        }
+        regBtn.onclick =()=> {
+            axios.get('/reg', {
+                params:{
+                    name:ipts[0].value,
+                    pwd:ipts[1].value,
+                }
+            }).then(res=>{
+                alert(res.data)
+            })
+        }
+    </script>
+</body>
+</html>
