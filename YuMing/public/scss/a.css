@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.box {
+  height: 100%;
+  width: 600px;
+}
+
+.box .head {
+  width: 100%;
+  height: 25px;
+  display: flex;
+}
+
+.box .head li {
+  flex: 1;
+}
+
+.box .content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.box .content ul {
+  width: 100%;
+  display: flex;
+}
+
+.box .content ul li {
+  flex: 1;
+}
+
+.box .content ul li button {
+  background: #cdecf8;
+}

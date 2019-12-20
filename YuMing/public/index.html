@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>域名管理</title>
+    <link rel="stylesheet" href="scss/a.css">
+</head>
+
+<body>
+    <div class="box" id="box">
+        <input type="text" id='searchIpt'> <button id='searchBtn'>搜索</button>
+        <ul class="head" id="head">
+            <li class='li_ym'>域名</li>
+            <li class="li_flag">服务状态</li>
+            <li class="li_lastTime" id='sortBtn'>到期时间</li>
+            <li class="li_operation">操作</li>
+        </ul>
+        <div class="content" id="content">
+
+        </div>
+    </div>
+
+    <script src="axios.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
